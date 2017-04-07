@@ -1,0 +1,36 @@
+<!--
+On vous impose les classes CSS .rouge et .bleu ainsi que le html. Ajouter le jQuery qui permet de mettre en rouge le texte au survol (il redivient noir quand on le quitte), et qui permet de mettre ou retirer le bg du texte en bleu quand on clique sur le bouton. Pour cela, trouver le moyen d'ajouter ou de retirer les classes prédéfinies en CSS.
+-->
+​
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercices JQuery Partie 1</title>
+		<meta charset="utf-8">
+		<style>
+			.rouge {color: red;}
+			.bleu {background: cyan; width: 300px;}
+		</style>
+		<script src="jquery-migrate-1.4.1.min.js"></script>
+	</head>
+​
+	<body>
+		<p id="survol">Ce texte va changer de couleur au survol</p>
+		<button id="classBleu">Le background du texte devient bleu</button>
+
+		<script>
+			$(function(){
+				$("#survol").hover(
+					function(){ $("#survol").addClass("rouge");},
+					function(){ $("#survol").removeClass("rouge");});
+				// La méthode hover attend 2 fonctions en arguments : la première correspond à un mouseenter, la seconde à un mouseleave
+​
+				$("#classBleu").click(function(){
+					$("#survol").toggleClass("bleu");
+				});
+​
+				// addClass() permet d'ajouter une classe à l'élément préalablement sélectionné. removeClass() permet de la retirer. toggleClass() alterne addClass() et removeClass().
+			});
+		</script>
+	</body>
+</html>

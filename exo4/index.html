@@ -1,0 +1,49 @@
+
+    <!--
+    Vous créez un formulaire avec un input "Pseudo" et un input "mdp". Lorsqu'on clique dans l'un des champs, sa bordure devient verte et de 2px d'épaisseur, quand on le quitte il reprend sa forme initiale.
+    -->
+    ​
+    <!DOCTYPE html>
+    <html>
+    	<head>
+    		<title>Exercices JQuery Partie 1</title>
+    		<meta charset="utf-8">
+
+    		<script src="jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    	</head>
+    ​
+    	<body>
+
+    		<h3>Exercice 4 : </h3>
+
+    			<form>
+    				<p><label>Pseudo</label><input class="focus" id="pseudo" type="text"></p>
+    				<p><label>mdp</label><input class="focus" id="mdp" type="text"></p>
+    				<input type="submit" value="se connecter">
+    			</form>
+
+    		<script>
+    			$(function(){
+    				$(".focus").focusin(function(){
+    					$(this).css("border", "2px solid green");
+    				});
+    				// Autre façon d'écrire la méthode css() :
+    				$(".focus").focusin(function(){
+    					$(this).css({"border" : "2px solid green", "border-radius" : "5px"});
+    				});
+    ​
+    				$(".focus").focusout(function(){
+    					$(this).css("border", "");
+    				});
+    ​
+    				// this : ce mot clé renvoie systématiquement à l'objet (la balise) dans laquelle on se situe (par exemple dans celle où on a cliqué).
+    ​
+    				// focusin va avec focusout : ils s'appliquent aussi aux enfants. Il y existe aussi focus qui va avec blur : ils ne s'appliquent qu'aux inputs de formulaire.
+    ​
+    				// La méthode css() a 2 syntaxes : css("propriete", "valeur") ou css({ "prop1" : "valeur1", "prop2" : "valeur2"})
+    			});
+    		</script>
+    	</body>
+    </html>

@@ -1,0 +1,121 @@
+
+
+
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<meta charset="utf-8">
+
+				  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+			<title>Galerie</title>
+	     <style>
+	         body {
+	                 background: #12121C;
+	             }
+	 		#galerie {
+	 			width: 750px;
+	 			height: 500px;
+	 			overflow: hidden;
+	 			position: relative;
+	 			border: 10px solid #fff;
+	             border-radius: 5px;
+	 			box-shadow: 0 10px 25px rgba(0, 0, 0, 1);
+	 		}
+	 		#galerie img {
+	 			width: 750px;
+	 			height: 500px;
+	 		}
+	 		.container{
+	 			width: 750px;
+	 			height: 500px;
+	 			margin: 0 auto;
+	 			margin-top: 50vh;
+	             transform: translateY(-50%);
+	 		}
+	 		.thumbnail  {
+	 			width: 80px;
+	 			height: 80px;
+	 			border: 2px solid #fff;
+	 			margin: 10px 5px 0 0;
+	 			border-radius: 5px;
+	 		}
+	 		.thumbnail:hover {
+	 			cursor: pointer;
+	 		}
+	 		.titre {
+	 			height: 40px;
+	 			width: 100%;
+	 			font-size: 30px;
+	 			color: #fff;
+	 			background: #000;
+	 			opacity: 0.5;
+	 			position: absolute;
+	 			bottom: 0px;
+	 			padding-left: 10px;
+	 		}
+	 		.selected {
+	 			border: 2px solid #C63333;
+	 		}
+	     </style>
+
+	 </head>
+	 <body>
+
+	 <div class="container">
+	 	<div id="galerie">
+	 		<img class="images" src="" alt="">
+	 		<div class="titre"></div>
+	 	</div>
+
+		<div>
+		<img class="thumbnail" src="imgs/a.jpg"  alt="Corse">
+		<img class="thumbnail" src="imgs/b.jpg"  alt="Jura">
+		<img class="thumbnail" src="imgs/c.jpg"  alt="Bretagne">
+		<img class="thumbnail" src="imgs/d.jpg"  alt="Guadeloupe">
+	</div>
+
+	 </div>"quatre" style="background-color : brown;"></div>
+				<hr>
+
+
+
+
+				<script>
+
+		 $(function(){
+
+      // afficher 1 image
+
+			var url = $(".thumbnail").eq(0).attr("src");
+			var titre = $(".thumbnail").eq(0).attr("alt");
+
+			$("#galerie img").attr("src", url);
+			$(".titre").html(titre);
+
+			$(".thumbnail").eq(0).addClass("selected");
+
+			// afficher image 2
+			$(".thumbnail").click(function(){
+				url = $(this).attr("src");
+				titre = $(this).attr("alt");
+
+
+				$("#galerie img").attr("src", url);
+				$(".titre").html(titre);
+
+				$(".thumbnail").removeClass("selected");
+
+				$(this).addClass("selected");
+
+			});
+
+
+	});
+
+
+
+				</script>
+			</body>
+		</html>

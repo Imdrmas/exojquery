@@ -1,0 +1,50 @@
+<!--
+Vous créez un document HTML avec un bouton et un <div> dont le contenu texte n'est pas affiché à l'état initial.
+​
+Lorsqu'on clique sur le bouton, le contenu du <div> apparaît.
+​
+Vous écrivez le script en jQuery.
+​
+-->
+​
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercices JQuery Partie 1</title>
+		<meta charset="utf-8">
+		<script src="jquery.js"></script>
+		<!-- OU -->
+		<script
+  		src="https://code.jquery.com/jquery-3.2.1.min.js"
+  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous"></script>
+​
+		<!-- OU -->
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+​
+	</head>
+​
+	<body>
+		<h3>Exercice 1 : </h3>
+
+				<button id="bouton1">Voir le texte</button>
+				<div id="contenu1" style="display: none;">
+					<h3>Ceci est le contenu 1</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+
+		<script>
+				$(function(){      // document ready obligatoire pour encadrer le script JS/jQuery
+					$("#bouton1").click(function(){
+						$("#contenu1").show();
+					});
+				});  // fin du document reday
+​
+				// Ou autre document ready :
+				$(document).ready(function () {
+					// code ici
+				});
+​
+		</script>
+	</body>
+</html>

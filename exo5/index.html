@@ -1,0 +1,65 @@
+<!--
+Vous créez un bouton et deux paragraphes de classe "info" vides. Lorsqu'on clique sur le bouton, vous ajoutez du texte dans chaque paragraphe grâce au script jQuery. Faites-le selon deux méthodes différentes.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercices JQuery Partie 5</title>
+		<meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+   <style>
+
+
+
+   </style>
+
+
+	</head>
+	<body>
+
+
+
+		<h3>Exercice 5 : </h3>
+
+<div class="box">
+
+    <button> Ajouter le texte </button>
+
+  <p class="info"></p>
+  <p class="info"></p>
+
+
+
+</div>
+
+
+ <script>
+
+   $(function () {
+
+  // mettre du text le premier p :
+
+  $("button").click(function(){
+
+  	 $(".info").eq(0).html("hello world !");
+
+  	 $("p").eq(1).html("bonjour le monde!");
+
+  });
+
+  });
+
+
+
+
+</script>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,83 @@
+
+
+
+
+
+		<!--
+		Vous créez 4 boutons pour animer 4 <div> carrés.
+
+		Animation 1 : monter de 200px. Ne marche qu'une fois.
+		Animation 2 : partir en diagonale haut-droite de 200px. Ne marche qu'une fois.
+		Animation 3 : partir en diagonale bas-droite de 100px puis en diagonale haut-droite de 100px. A chaque clic, le carré continue son déplacement.
+		Animation 4 : partir à droite de 400px puis revenir à gauche. L'animation continue indéfiniment.
+
+		-->
+
+
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<title>Exercices JQuery Partie 1</title>
+				<meta charset="utf-8">
+				  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+				<style>
+					div {
+						width: 200px;
+						height: 200px;
+						position: relative;
+					}
+				</style>
+			</head>
+
+			<body>
+
+				<button id="anim1">Animation 1</button>
+				<div id="un" style="background-color : olive;"></div>
+				<hr>
+				<button id="anim2">Animation 2</button>
+				<div id="deux" style="background-color : peru;"></div>
+				<hr>
+				<button id="anim3">Animation 3</button>
+				<div id="trois" style="background-color : pink;"></div>
+				<hr>
+				<button id="anim4">Animation 4</button>
+				<div id="quatre" style="background-color : brown;"></div>
+				<hr>
+
+
+				<script>
+					$(function(){
+						// Animation 1 :
+						$("#anim1").click(function(){
+							$("#un").animate({bottom : "200px"});
+						});
+
+						// Animation 2 :
+						$("#anim2").click(function(){
+							$("#deux").animate({ left : "200px", bottom : "200px"});
+						});
+
+						// Animation 3 :
+						$("#anim3").click(function(){
+							$("#trois").animate({bottom : "+=200px", left : "+=200px"}).animate({bottom : "-=200px", left : "+=200px"});
+						});
+
+						// Animation 4 :
+						function anim4(){
+							$("#quatre").animate({left : "400px"}, 300).animate({left : "0px"}, 300, anim4);
+						}
+						// Ci-dessus,  la fonction anim4 s'appelle elle-même quand les animations sont terminées. Cela permet de les faire tourner en boucle à l'infini Notez l'absence de () à anim4 car il s'agit d'une callback.
+
+						$("#anim4").click(function(){
+							anim4(); // on appelle la fonction anim4 pour la première fois lors du clic sur le bouton pour qu'elle démarre.
+						});
+
+						// Autre manière de faire :
+						$("#anim4").click(anim4); // dans ce cas, pas de parenthèses à anim4, sinon elle se déclenche immédiatement sans attendre l'ordre de l'événement click
+
+					}); // fin du document ready
+
+
+				</script>
+			</body>
+		</html>

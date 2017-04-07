@@ -1,0 +1,83 @@
+<!--
+Vous créez un bouton et deux paragraphes de classe "info" vides. Lorsqu'on clique sur le bouton, vous ajoutez du texte dans chaque paragraphe grâce au script jQuery. Faites-le selon deux méthodes différentes.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercices JQuery Partie 7</title>
+		<meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+   <style>
+  li{
+		list-style-type: none;
+
+	}
+	.menu{
+		float: left;
+		width: 200px;
+	}
+  .sous-menu{
+		display: none;
+		padding: 0;
+	}
+
+   </style>
+
+
+	</head>
+	<body>
+
+
+
+		<h3>Exercice 7 : </h3>
+
+
+   <ul>
+   	<li class="menu"><a href="#">lien menu 1</a>
+		<ul class="sous-menu">
+			<li><a href="#"></a>lien menu 1</li>
+			<li><a href="#"></a>lien menu 1</li>
+			<li><a href="#"></a>lien menu 1</li>
+			<li><a href="#"></a>lien menu 1</li>
+		</ul>
+		</li>
+		<li></li>
+		<li class="menu"><a href="#">lien menu 2</a>
+	  <ul class="sous-menu">
+		 <li><a href="#"></a>lien menu 2</li>
+		 <li><a href="#"></a>lien menu 2</li>
+		 <li><a href="#"></a>lien menu 2</li>
+		 <li><a href="#"></a>lien menu 2</li>
+		</ul>
+		</li>
+   </ul>
+
+
+
+
+ <script>
+
+ $(function() {
+
+   $('.menu').mouseenter(function() {
+
+     $(this).find('.sous-menu').slideDown(200);
+
+  });
+
+	$('.menu').mouseleave(function() {
+
+		$(this).find('.sous-menu').slideUp();
+
+ });
+ });
+
+
+</script>
+	</body>
+</html>
